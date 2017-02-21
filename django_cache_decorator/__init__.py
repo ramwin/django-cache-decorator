@@ -29,13 +29,13 @@ def get_cache_factory(cache_type):
     Helper to only return a single instance of a cache
     As of django 1.7, may not be needed.
     """
-    from django.core.cache import caches, cache as default_cache
+    from django.core.cache import caches
     
     if cache_type is None:
         cache_type = 'default'
     
     if not cache_type in cache_factory:
-        cache_factory[cache_type] = caches(cache_type)
+        cache_factory[cache_type] = caches[cache_type]
 
     return cache_factory[cache_type]
 
