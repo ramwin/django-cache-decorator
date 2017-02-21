@@ -12,5 +12,5 @@ def cache_get_key(*args, **kwargs):
         serialise.append(str(arg))
 
     full_str = "".join(serialise)
-    key = hashlib.md5(full_str).hexdigest()
+    key = hashlib.md5(full_str.encode('utf-8')).hexdigest()
     return key
