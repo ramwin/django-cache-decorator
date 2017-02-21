@@ -46,7 +46,7 @@ def django_cache_decorator(time=300, cache_key='', cache_type=None):
     """
     
     if cache_type is None:
-        cache_type = 'memcache' 
+        cache_type = 'default' 
     
     cache = get_cache_factory(cache_type)
     if not cache_key:
