@@ -6,11 +6,11 @@ import hashlib
 def cache_get_key(*args, **kwargs):
     serialise = []
     for arg in args:
-        serialise.append(unicode(arg))
+        serialise.append(str(arg))
     for key,arg in kwargs.items():
-        serialise.append(unicode(key))
-        serialise.append(unicode(arg))
+        serialise.append(str(key))
+        serialise.append(str(arg))
 
-    full_str = u"".join(serialise).encode('utf-8')
+    full_str = "".join(serialise)
     key = hashlib.md5(full_str).hexdigest()
     return key
