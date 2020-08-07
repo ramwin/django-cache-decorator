@@ -4,20 +4,17 @@ Easily add caching to functions within a django project.
 ## Installation from PyPi
 
 ```
-pip install django-cache-decorator
+pip install django3-cache-decorator
 ```
 
 
-## Installation from Github
-
-```
-pip install -e git+https://github.com/rchrd2/django-cache-decorator.git#egg=django-cache-decorator
-```
- 
 
 ## Example usage
 
 ```
+from django_cache_decorator import django_cache_decorator
+
+
 @django_cache_decorator(time=0)
 def geocodeGooglePlaceTextJson(location):
     ...
